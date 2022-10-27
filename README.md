@@ -10,13 +10,11 @@
 >  SELECT & WHERE 
 
 
-###### select BusinessEntityID, JobTitle, HireDate
-
-###### from HumanResources.Employee
-
-###### where HireDate >'20120112';
-
+ <P>select BusinessEntityID, JobTitle, HireDate</P> <P>from HumanResources.Employee</P><P> where HireDate >'20120112';</P>
+ 
+ 
 ![image](https://user-images.githubusercontent.com/115644864/198397801-908d6bde-f875-4dd5-8806-ce890ab4c6a3.png)
+
 
 
 ###### select BusinessEntityID, JobTitle, HireDate, OrganizationLevel, Gender
