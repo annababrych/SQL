@@ -2,7 +2,8 @@
 
 
 
-**Examples of queries using the clause in MySql. Used skills :  SELECT, WHERE, OREDR BY, JOINS, CASE, WHERE, SUBQUERIES, DATA, GROUP BY.**<br>
+**Examples of queries using the clause in MySql. Used skills : SELECT, WHERE, OREDR BY, CAST, CONVERT, JOINS, CASE, WHERE, SUBQUERIES, DATA, GROUP BY.**<br>
+
 <i>The database is from the training program.</i>
 
 
@@ -60,11 +61,22 @@ where Name like '_o%'; <br>
  ![image](https://user-images.githubusercontent.com/115644864/198403850-6340dc0f-01b9-45c0-8e23-50e7afd0e461.png)
  
   <br>
+select top 8 DepartmentID as Numer_Departamentu, Name as<br>
+"Nazwa departamentu" <br>
+from HumanResources.Department;<br>
+<br>
+
+![image](https://user-images.githubusercontent.com/115644864/198405221-c43f6707-be3a-42dc-b62c-7d60b8c1ef19.png)
+
+
+<br>
+
+
 
  </details>
  
  <details>
-<summary><b>OREDR BY</b></summary> <br>
+<summary><b>ORDER BY</b></summary> <br>
  select BusinessEntityID, JobTitle as "Stanowisko pracownika", HireDate, MaritalStatus<br>
 from HumanResources.Employee<br>
 where MaritalStatus='M'<br>
@@ -85,4 +97,17 @@ order by 1 desc, HireDate  <br>
 
  
    <br>
+select top 1 LocationID, Name, CostRate<br>
+from Production.Location<br>
+order by CostRate desc<br>
+<br>
+
+![image](https://user-images.githubusercontent.com/115644864/198405424-f4137155-0e2c-452c-83f6-df3d857dc2d2.png)
+
+
+<br>
+  </details>
+<details>
+<summary><b>CAST & CONVERT</b></summary> <br>
+
   </details>
