@@ -2,7 +2,8 @@
 
 
 
-**Examples of queries using the clause in MySql. Used skills :  SELECT, WHERE, OREDR BY, JOINS, CASE, WHERE, SUBQUERIES, DATA, GROUP BY**<br>The database is from the training program.
+**Examples of queries using the clause in MySql. Used skills :  SELECT, WHERE, OREDR BY, JOINS, CASE, WHERE, SUBQUERIES, DATA, GROUP BY.**<br>
+<i>The database is from the training program.</i>
 
 
 
