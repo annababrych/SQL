@@ -109,5 +109,28 @@ order by CostRate desc<br>
   </details>
 <details>
 <summary><b>CAST & CONVERT</b></summary> <br>
+select cast(VacationHours as float)/8 as Kolumna<br>
+from HumanResources.Employee<br>
+<br>
 
+![image](https://user-images.githubusercontent.com/115644864/198734683-9642c777-da5a-4761-9540-4ce8cf072d27.png)
+
+<br>
+select getdate() as "Aktualna data z godzina"<br>
+<br>
+
+![image](https://user-images.githubusercontent.com/115644864/198734771-81ecfb76-19a0-4b69-8476-bed2b00909a4.png)
+
+
+<br>
+select BusinessEntityID, <br>
+cast(RateChangeDate as date) as "Data zmiany", <br>
+str(Rate, 7,3) as "Sfromatowana stawka"<br>
+from HumanResources.EmployeePayHistory<br>
+<br>
+
+![image](https://user-images.githubusercontent.com/115644864/198735232-357bdcae-75c7-4033-af44-cbadb2ce27ab.png)
+
+
+<br>
   </details>
