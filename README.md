@@ -2,7 +2,7 @@
 
 
 
-**Examples of queries using the clause in MySql. Used skills : SELECT, WHERE, ORDER BY, CAST, CONVERT, GROUP BY, JOINS, CASE, WHERE, SUBQUERIES, DATA.**<br>
+**Examples of queries using the clause in MySql. Used skills : SELECT, WHERE, ORDER BY, CAST, CONVERT, GROUP BY, CASE, JOINS, WHERE, SUBQUERIES, DATA.**<br>
 
 <i>The database is from the training program.</i>
 
@@ -167,3 +167,65 @@ GROUp by JobTitle  <br>
  
    <br>
    </details>
+   <details>
+<summary><b>CASE</b></summary> <br>
+ 
+ select Name, <br>
+	case name when 'English' then 'Angielski' <br>
+	when 'spanish' then 'hiszpanski' <br>
+	else 'Jakis inny jezyk'  <br>
+	end as "Jezyk po polsku" <br>
+from production.culture <br>
+  <br>
+ 
+ ![image](https://user-images.githubusercontent.com/115644864/198736368-3cddc545-254f-439f-8ca1-9f8df299a38f.png)
+ 
+ <br>
+ select BusinessEntityID, Gender, VacationHours, <br>
+	case gender when 'F' then + 16 <br>
+	else VacationHours <br>
+	end as "wolne godziny" -- tworzy nowa kolumne z case  <br>
+from HumanResources.Employee <br>
+  <br>
+ 
+ ![image](https://user-images.githubusercontent.com/115644864/198736482-dd8928d2-1d68-4a34-95e4-bd540131a9cf.png)
+
+  <br>
+ select Description, DiscountPct, <br>
+case when DiscountPct <=0.1 then 'Mala znizka'  <br>
+when DiscountPct <=2.0 then 'srednia znizka' <br>
+when DiscountPct <=3.0 then 'Dobra znizka' <br>
+when DiscountPct <=0.4 then 'super znizka' <br>
+else 'Prawie darmo' <br>
+end as "Status obnizki" <br>
+from Sales.SpecialOffer <br>
+  <br>
+ 
+ ![image](https://user-images.githubusercontent.com/115644864/198736635-46caacb8-9e31-499a-9f9a-29bc018981dd.png)
+
+  <br>
+ 
+ select BusinessEntityID, MaritalStatus, Gender, VacationHours, <br>
+case when MaritalStatus ='M'and Gender = 'F' then VacationHours + 32  <br>
+when gender = 'F' then VacationHours + 16  <br>
+end as "Wolne godziny po zmianie."  <br>
+from HumanResources.Employee  <br>
+  <br>
+ 
+ ![image](https://user-images.githubusercontent.com/115644864/198736881-ca648f81-5081-41e0-8377-1aabd5edcac2.png)
+
+  <br>
+ select BusinessEntityID, JobTitle,  <br>
+case when OrganizationLevel is Null then 'Szef wszystkich szefów'  <br>
+ when OrganizationLevel <3 then 'Wiceprezesi i managerowie'  <br>
+ else 'Pracownicy'  <br>
+ end as 'STATUS'  <br>
+from HumanResources.Employee   <br>
+ORDER BY OrganizationLevel  <br>
+      <br>
+ 
+![image](https://user-images.githubusercontent.com/115644864/198737043-61d50c23-e3d4-4d95-a35e-664b120b4f45.png)
+                           
+     <br>                        
+                           
+    </details>
