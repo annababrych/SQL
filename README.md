@@ -226,6 +226,5 @@ ORDER BY OrganizationLevel  <br>
  
 ![image](https://user-images.githubusercontent.com/115644864/198737043-61d50c23-e3d4-4d95-a35e-664b120b4f45.png)
                            
-     <br>                        
-                           
-    </details>
+ <br>                         
+</details>
