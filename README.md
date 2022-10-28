@@ -2,7 +2,7 @@
 
 
 
-**Examples of queries using the clause in MySql. Used skills : SELECT, WHERE, OREDR BY, CAST, CONVERT, JOINS, CASE, WHERE, SUBQUERIES, DATA, GROUP BY.**<br>
+**Examples of queries using the clause in MySql. Used skills : SELECT, WHERE, ORDER BY, CAST, CONVERT, GROUP BY, JOINS, CASE, WHERE, SUBQUERIES, DATA.**<br>
 
 <i>The database is from the training program.</i>
 
@@ -134,3 +134,27 @@ from HumanResources.EmployeePayHistory<br>
 
 <br>
   </details>
+<details>
+<summary><b>GROUP BY</b></summary> <br>
+select TerritoryID, sum(salesYTD) as SUMA,<br>
+max(salesYTD) as MAX, <br>
+min(salesYTD) as MIN,<br>
+avg(SalesYTD) as ŚREDNIA<br>
+from Sales.SalesPerson<br>
+group by TerritoryID<br>
+ <br>
+ 
+ ![image](https://user-images.githubusercontent.com/115644864/198735827-ac146689-c280-4084-bc98-70e9f19587ae.png)
+
+ 
+ <br>
+ select JobTitle, gender, sum(vacationhours) as "Suma wolnych godzin" <br>
+from HumanResources.Employee <br>
+where MaritalStatus = 'M' <br>
+GROUp by gender, JobTitle <br>
+ <br>
+ 
+ ![image](https://user-images.githubusercontent.com/115644864/198735916-141550cb-c688-4fe1-81ca-311dcc5ab439.png)
+
+  <br>
+   </details>
