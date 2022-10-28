@@ -1,8 +1,8 @@
-# SQL ----------repository in progress
+# SQL 
 
 
 
-**Examples of queries using the clause in MySql. Used skills : SELECT, WHERE, ORDER BY, CAST, CONVERT, GROUP BY, CASE, DATA, JOINS, WHERE, SUBQUERIES, .**<br>
+**Examples of queries using the clause in MySql. Used skills : SELECT, WHERE, ORDER BY, CAST, CONVERT, GROUP BY, CASE, DATA, JOINS (INNER, RIGHT, LEFT, FULL), SUBQUERIES, .**<br>
 
 <i>The database is from the training program.</i>
 
@@ -258,3 +258,127 @@ select datediff(YEAR, '19841010', getdate()) as "Różnica lat."<br>
 
 	
 <br>
+</details>
+ <details>
+<summary><b>INNER JOIN</b></summary> <br>
+select * <br>
+from HumanResources.EmployeeDepartmentHistory as EDH, HumanResources.Shift as S  <br>
+where EDH.ShiftID = S.ShiftID  <br>
+order by BusinessEntityID  <br>
+<br>
+	
+![image](https://user-images.githubusercontent.com/115644864/198738528-b2e4cb4d-b60e-4ac2-809a-2d51b6d3f28b.png)
+
+ <br>
+ select EDH.BusinessEntityID, P.FirstName, P.LastName, S.name <br>
+from HumanResources.EmployeeDepartmentHistory as EDH  <br>
+inner join HumanResources.Shift as S on EDH.ShiftID=S.ShiftID --tu sie powtarza kolumna shift id <br>
+inner join Person.person as P on EDH.businessEntityID=P.BusinessEntityID  <br>
+order by BusinessEntityID <br>
+ <br>
+	
+![image](https://user-images.githubusercontent.com/115644864/198738622-06713fcd-d5b5-41a1-afcb-15dd56f4c039.png)
+	
+ <br>
+select B.BusinessEntityID, T.Name, A.AddressLine1, A.PostalCode, A.city <br>
+from Person.BusinessEntityaddress as B  <br>
+inner join person.address as A on B.AddressID=A.AddressID <br>
+inner join Person.AddressType as T on b.AddressTypeID=T.AddressTypeID;  <br>
+ <br>
+	
+![image](https://user-images.githubusercontent.com/115644864/198738695-d979d957-1807-4f09-8b71-6975b6fb74ac.png)
+	
+ <br>
+
+
+	
+	
+</details>
+ <details>
+<summary><b>LEFT-RIGHT-FULL JOIN</b></summary> <br>
+SELECT E.OrganizationNode, D. * <br> 
+FROM HumanResources.Employee AS E  <br>
+LEFT JOIN Production.Document AS D  <br>
+ON E.OrganizationNode = D.DocumentNode <br>
+ <br>
+	
+![image](https://user-images.githubusercontent.com/115644864/198739078-4cfee707-8580-4ccc-b940-e8b733174ca7.png)
+
+ <br>
+SELECT E.OrganizationNode, D. *  <br>
+FROM HumanResources.Employee AS E  <br>
+RIGHT JOIN Production.Document AS D  <br>
+ON E.OrganizationNode = D.DocumentNode <br>
+ <br>
+	
+![image](https://user-images.githubusercontent.com/115644864/198739151-7ec38b71-90a2-4e83-be0b-2fa93baa4a62.png)
+
+ <br>
+SELECT E.OrganizationNode, D. *  <br>
+FROM HumanResources.Employee AS E  <br>
+FULL JOIN Production.Document AS D  <br>
+ON E.OrganizationNode = D.DocumentNode <br>
+ <br>
+	
+![image](https://user-images.githubusercontent.com/115644864/198739202-35c1d96a-e92f-41db-9ba4-f8f809710ef4.png)
+
+ <br>
+select JC.JobCandidateID, HR.* <br>
+from HumanResources.Employee as HR <br>
+RIGHT join HumanResources.JobCandidate as JC <br>
+ON HR.BusinessEntityID=JC.BusinessEntityID <br>
+ORDER BY BusinessEntityID DESC <br>
+ <br>
+	
+![image](https://user-images.githubusercontent.com/115644864/198739293-23a42e4e-0cb2-47c6-ba77-979660738505.png)
+
+ <br>
+</details>
+<details>
+<summary><b>SUBQUERIES</b></summary> <br>
+select BusinessEntityID, VacationHours <br>
+from HumanResources.Employee --z tej tabeli <br>
+where VacationHours > (select VacationHours  <br>
+			from HumanResources.Employee <br>
+			where BusinessEntityID=49)<br>
+<br>
+	
+![image](https://user-images.githubusercontent.com/115644864/198739601-e18cebea-55e7-4813-bced-6b58c8d4b717.png)
+	
+<br>
+select BusinessEntityID, VacationHours <br>
+from HumanResources.Employee --z tej tabeli <br>
+where VacationHours > (select VacationHours <br> 
+		       from HumanResources.Employee <br>
+		       where BusinessEntityID=49)<br>
+and MaritalStatus=(select MaritalStatus <br>
+		       from HumanResources.Employee<br>
+		       where BusinessEntityID =49) <br>
+<br>
+	
+![image](https://user-images.githubusercontent.com/115644864/198739727-f123568f-259c-4ed2-bb02-85f4204d0ba6.png)
+
+<br>	
+select *<br>
+from (select BusinessEntityID, VacationHours<br>
+		from HumanResources.Employee) as Podzapytanie<br>
+where BusinessEntityID between 100 and 150; <br>
+	
+![image](https://user-images.githubusercontent.com/115644864/198739819-7646ca4e-88e7-4449-a72e-506eeda23f19.png)
+
+<br>
+select ProductID, Name, ProductNumber, Color, SafetyStockLevel<br>
+from Production.Product<br>
+	where Color = (select Color  <br>
+		from Production.Product <br>
+		where ProductNumber='FL-2301')<br>
+and SafetyStockLevel>= (select SafetyStockLevel <br>
+		from Production.Product <br>
+		where Name='Chain')<br>
+<br>
+
+![image](https://user-images.githubusercontent.com/115644864/198739946-6c7ddd6d-d71b-47a0-a1ab-93f677a7d204.png)
+
+	
+<br>
+</details>
