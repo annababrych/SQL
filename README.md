@@ -157,4 +157,13 @@ GROUp by gender, JobTitle <br>
  ![image](https://user-images.githubusercontent.com/115644864/198735916-141550cb-c688-4fe1-81ca-311dcc5ab439.png)
 
   <br>
+ select JobTitle, sum(vacationhours) as "Suma wolnych godzin"  <br>
+from HumanResources.Employee  <br>
+GROUp by JobTitle  <br>
+   <br>
+ 
+ ![image](https://user-images.githubusercontent.com/115644864/198736155-12e68e28-fc94-4963-88c3-7da2ce24b3bc.png)
+
+ 
+   <br>
    </details>
