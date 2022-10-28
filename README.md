@@ -2,7 +2,7 @@
 
 
 
-**Examples of queries using the clause in MySql. Used skills : SELECT, WHERE, ORDER BY, CAST, CONVERT, GROUP BY, CASE, JOINS, WHERE, SUBQUERIES, DATA.**<br>
+**Examples of queries using the clause in MySql. Used skills : SELECT, WHERE, ORDER BY, CAST, CONVERT, GROUP BY, CASE, DATA, JOINS, WHERE, SUBQUERIES, .**<br>
 
 <i>The database is from the training program.</i>
 
@@ -228,3 +228,33 @@ ORDER BY OrganizationLevel  <br>
                            
  <br>                         
 </details>
+<details>
+<summary><b>DATA</b></summary> <br>
+select dateadd(day,5,getdate())<br>
+<br>
+	
+![image](https://user-images.githubusercontent.com/115644864/198737469-9adc292d-e977-4f84-aa1c-d3f91e8ebd5b.png)
+	
+<br>
+select dateadd(year,3,getdate()) as "aktualny rok + 3 lata"
+<br>
+	
+![image](https://user-images.githubusercontent.com/115644864/198737607-1b0a40fc-e8e7-4b6c-9cc6-6c690ce4252e.png)
+
+<br>
+select day(getdate()) as "dzien",<br>
+month(getdate()) as "msc",<br>
+year(getdate()) as rok<br>
+<br>
+	
+![image](https://user-images.githubusercontent.com/115644864/198737668-1f5685ce-9ee2-4bda-8c15-d58133733509.png)
+
+	
+<br>
+select datediff(YEAR, '19841010', getdate()) as "Różnica lat."<br>
+<br>
+
+![image](https://user-images.githubusercontent.com/115644864/198738299-2af2be44-0204-4ba8-ac6d-00f953822d70.png)
+
+	
+<br>
